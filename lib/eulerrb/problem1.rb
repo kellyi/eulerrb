@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Problem1
   def initialize
     @numbers = *(1...1000)

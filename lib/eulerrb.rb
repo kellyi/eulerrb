@@ -1,4 +1,6 @@
-require "eulerrb/version"
+# frozen_string_literal: true
+
+require 'eulerrb/version'
 
 module Eulerrb
   class Error < StandardError; end
@@ -7,6 +9,6 @@ module Eulerrb
     require "eulerrb/problem#{problem}"
     Object.const_get("Problem#{problem}").new.solve
   rescue LoadError
-    raise StandardError.new 'not yet implemented'
+    raise StandardError, 'not yet implemented'
   end
 end
