@@ -1,16 +1,18 @@
 #!/usr/bin/env ruby
-require "bundler/setup"
-require "pry"
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'pry'
 require 'optparse'
 require 'eulerrb'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: example.rb [options]"
+  opts.banner = 'Usage: example.rb [options]'
 
-  opts.on("-p PROBLEM", "--problem PROBLEM", Integer, "Solve problem") do |v|
+  opts.on('-p PROBLEM', '--problem PROBLEM', Integer, 'Solve problem') do |v|
     options[:problem] = v
   end
 end.parse!
 
-puts Eulerrb::solve problem: options[:problem]
+puts Eulerrb.solve problem: options[:problem]

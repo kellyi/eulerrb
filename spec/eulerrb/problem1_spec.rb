@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/eulerrb/problem1'
 
 RSpec.describe Problem1 do
