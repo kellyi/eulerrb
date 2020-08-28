@@ -1,2 +1,23 @@
 inherit_from: .rubocop_todo.yml
 require: rubocop-rake
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: :comma
+
+Metrics/BlockLength:
+  Exclude:
+    - 'eulerrb.gemspec'
+    - 'spec/*'
+    - 'spec/eulerrb/*'

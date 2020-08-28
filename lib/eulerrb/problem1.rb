@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Problem1
   def initialize
     @numbers = *(1...1000)
@@ -7,23 +5,23 @@ class Problem1
 
   def solve
     @numbers
-      .select { |n| multiple_of_three_or_five?(n: n) }
+      .select { |n| multiple_of_three_or_five?(number: n) }
       .inject(:+)
   end
 
-  def multiple_of_three_or_five?(n:)
-    multiple_of_three?(n: n) || multiple_of_five?(n: n)
+  def multiple_of_three_or_five?(number:)
+    multiple_of_three?(number: number) || multiple_of_five?(number: number)
   end
 
   private
 
   attr_reader :numbers
 
-  def multiple_of_three?(n:)
-    n.modulo(3).zero?
+  def multiple_of_three?(number:)
+    number.modulo(3).zero?
   end
 
-  def multiple_of_five?(n:)
-    n.modulo(5).zero?
+  def multiple_of_five?(number:)
+    number.modulo(5).zero?
   end
 end

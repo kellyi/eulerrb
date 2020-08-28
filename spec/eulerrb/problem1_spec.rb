@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../../lib/eulerrb/problem1'
 
 RSpec.describe Problem1 do
@@ -11,7 +9,7 @@ RSpec.describe Problem1 do
       let(:number) { 50 }
 
       it 'returns true' do
-        expect(subject.multiple_of_three_or_five?(n: number)).to be true
+        expect(subject.multiple_of_three_or_five?(number: number)).to be true
       end
     end
 
@@ -19,7 +17,7 @@ RSpec.describe Problem1 do
       let(:number) { 30 }
 
       it 'returns true' do
-        expect(subject.multiple_of_three_or_five?(n: number)).to be true
+        expect(subject.multiple_of_three_or_five?(number: number)).to be true
       end
     end
 
@@ -27,7 +25,7 @@ RSpec.describe Problem1 do
       let(:number) { 47 }
 
       it 'returns false' do
-        expect(subject.multiple_of_three_or_five?(n: number)).to be false
+        expect(subject.multiple_of_three_or_five?(number: number)).to be false
       end
     end
   end
