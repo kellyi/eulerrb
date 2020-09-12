@@ -1,3 +1,4 @@
---format documentation
 --color
+--format Generative::Formatter
 --require spec_helper
+--require generative
