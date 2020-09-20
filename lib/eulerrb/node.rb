@@ -1,4 +1,5 @@
 require 'memoist'
+require_relative './cache.rb'
 
 class Node
   extend Memoist
@@ -7,14 +8,14 @@ class Node
     @matrix = matrix
     @y = y
     @x = x
-    @cache = cache || {}
+    @cache = cache || Cache.instance
   end
 
   def left
     if x.zero?
       nil
     else
-      Node.new(matrix: matrix, y: y, x: x.pred, cache: @cache)
+      Node.new(matrix: matrix, y: y, x: x.pred, cache: cache)
     end
   end
 
@@ -22,7 +23,7 @@ class Node
     if x.succ == matrix.first.length
       nil
     else
-      Node.new(matrix: matrix, y: y, x: x.succ, cache: @cache)
+      Node.new(matrix: matrix, y: y, x: x.succ, cache: cache)
     end
   end
 
@@ -30,7 +31,7 @@ class Node
     if y.zero?
       nil
     else
-      Node.new(matrix: matrix, y: y.pred, x: x, cache: @cache)
+      Node.new(matrix: matrix, y: y.pred, x: x, cache: cache)
     end
   end
 
@@ -38,7 +39,7 @@ class Node
     if y.succ == matrix.length
       nil
     else
-      Node.new(matrix: matrix, y: y.succ, x: x, cache: @cache)
+      Node.new(matrix: matrix, y: y.succ, x: x, cache: cache)
     end
   end
 
@@ -59,14 +60,14 @@ class Node
                           [down.cost_distance_81, right.cost_distance_81].compact.min
                         end
 
-    @cache["#{y}, #{x}"] = distance
+    cache.set(key: "#{y}, #{x}", value: distance)
     distance
   end
 
   private
 
   def cached_cost_distance
-    @cache.dig("#{y}, #{x}")
+    cache.get(key: "#{y}, #{x}")
   end
 
   attr_reader :matrix, :y, :x, :cache
