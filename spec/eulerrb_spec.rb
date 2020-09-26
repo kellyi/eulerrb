@@ -1,3 +1,4 @@
+# typed: false
 RSpec.describe Eulerrb do
   it 'has a version number' do
     expect(Eulerrb::VERSION).not_to be nil

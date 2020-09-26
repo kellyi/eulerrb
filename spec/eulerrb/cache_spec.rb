@@ -1,3 +1,4 @@
+# typed: false
 require_relative '../../lib/eulerrb/cache.rb'
 
 RSpec.describe Cache do

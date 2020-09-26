@@ -1,3 +1,4 @@
+# typed: false
 require_relative '../../lib/eulerrb/utils.rb'
 
 RSpec.describe Utils do

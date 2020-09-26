@@ -1,3 +1,4 @@
+# typed: true
 require 'eulerrb/version'
 
 module Eulerrb

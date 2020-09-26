@@ -1,3 +1,4 @@
+# typed: false
 require_relative '../../lib/eulerrb/node.rb'
 
 RSpec.describe Node do
