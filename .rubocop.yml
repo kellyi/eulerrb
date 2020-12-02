@@ -16,6 +16,9 @@ Naming/MethodParameterName:
 Style/TrailingCommaInArrayLiteral:
   Enabled: :comma
 
+Style/CaseEquality:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - 'eulerrb.gemspec'
