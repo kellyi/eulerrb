@@ -1,7 +1,7 @@
 require 'memoist'
 
 class Passport
-  def initialize(byr:, iyr:, eyr:, hgt:, hcl:, ecl:, pid:, cid:)
+  def initialize(byr:, iyr:, eyr:, hgt:, hcl:, ecl:, pid:, cid:) # rubocop:disable Metrics/ParameterLists
     @byr = byr
     @iyr = iyr
     @eyr = eyr
