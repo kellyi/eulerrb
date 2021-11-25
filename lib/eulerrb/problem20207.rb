@@ -51,7 +51,7 @@ class Problem20207
                          end
                        end
 
-      { "#{key}" => adjusted_value }.merge(accumulator)
+      { key.to_s => adjusted_value }.merge(accumulator)
     end.freeze
   end
 
